@@ -566,6 +566,19 @@
             right: 850px;
             margin: auto;
         }
+        #getAllCus{
+            background-color: #87CEEB;
+            font-weight: bold;
+            width: 100px;
+            border-radius: 10px;
+            height: 40px;
+            position: absolute;
+            top: 430px;
+            bottom: 330px;
+            left: 35px;
+            right: 600px;
+            margin: auto;
+        }
         #T1{
             width: 1200px;
             height: 250px;
@@ -1146,6 +1159,17 @@
             right: 0px;
             margin: auto;
         }
+        #W10{
+            color: #004B49;
+            font-weight: bold;
+            font-size: x-large;
+            position: absolute;
+            top: 370px;
+            bottom: 0px;
+            left: 1250px;
+            right: 0px;
+            margin: auto;
+        }
 
         .InputBox7{
             background-color: #ACE1AF;
@@ -1202,9 +1226,21 @@
             right: 0px;
             margin: auto;
         }
+
+        .InputBox15{
+            background-color: #ACE1AF;
+            width: 180px;
+            height: 30px;
+            position: absolute;
+            top:  100px;
+            bottom: 0px;
+            left:   1020px;
+            right: 0px;
+            margin: auto;
+        }
         #B19{
             background-color: #E8F48C;
-            width: 150px;
+            width: 130px;
             height: 50px;
             font-weight: bold;
             font-size: large;
@@ -1212,7 +1248,7 @@
             position: absolute;
             top: 100px;
             bottom: 0px;
-            left:  1000px;
+            left:  1350px;
             right: 0px;
             margin: auto;
         }
@@ -1450,6 +1486,7 @@
             <button id="B9">Delete</button>
             <button id="B10">Update</button>
 
+
             <table border="2" id="T1">
                 <thead id="Th1">
                 <th>Customer Id</th>
@@ -1558,14 +1595,16 @@
             <div id="W5">Item Code</div>
             <div id="W6">Item Name</div>
             <div id="W7">Item Price</div>
-            <div id="W8">Quantity on hand</div>
+            <div id="W8">Qty On hand</div>
             <div id="W9">Quantity</div>
+            <div id="W10">Total</div>
 
             <input id="textField13" class="InputBox7" type="text" required="required">
             <input id="textField14" class="InputBox8" type="text" required="required">
             <input id="textField15" class="InputBox9" type="text" required="required">
             <input id="textField16" class="InputBox10" type="text" required="required">
             <input id="textField17" class="InputBox11" type="text" required="required">
+            <input id="textField20" class="InputBox15" type="text" required="required">
 
             <button type="button" id="B19">New Item</i></button>
 
@@ -1592,9 +1631,9 @@
             <h2 id="X2">PAYMENT :</h2>
             <h2 id="X3">BALANCE :</h2>
 
-            <input class="InputBox12" type="text" required="required">
-            <input class="InputBox13" type="text" required="required">
-            <input class="InputBox14" type="text" required="required">
+            <input id="InputBox12" class="InputBox12" type="text" required="required">
+            <input id="InputBox13" class="InputBox13" type="text" required="required">
+            <input id="InputBox14" class="InputBox14" type="text" required="required">
 
             <button id="B22">Purchase</i></button>
             <button id="B23">Close</i></button>
@@ -1604,8 +1643,15 @@
 
 
 <script src="Assets/lib/jquery-3.6.4.min.js"></script>
-<script src="Controller/CustomerController.js"></script>
-<script src="Controller/ItemController.js"></script>
+<!--<script src="Controller/CustomerController.js"></script>
+<script src="Controller/ItemController.js"></script>-->
+
+<script type="module" src="model/Customer.js"></script>
+<script type="module" src="Controller/CustomerController.js"></script>
+<script type="module" src="DB/db.js" ></script>
+
+<script type="module" src="model/Item.js"></script>
+<script type="module" src="Controller/ItemController.js"></script>
 
 
 <script>
@@ -1749,6 +1795,24 @@
          $("#Main4").css("display","none");
          $("#Main5").css("display","block");
      })
+
+         document.getElementById("B19").addEventListener('click',function (){
+             $("#Main1").css("display","none");
+             $("#Main2").css("display","none");
+             $("#Main3").css("display","none");
+             $("#Main4").css("display","block");
+             $("#Main5").css("display","none");
+         })
+
+         document.getElementById("B18").addEventListener('click',function (){
+             $("#Main1").css("display","none");
+             $("#Main2").css("display","none");
+             $("#Main3").css("display","block");
+             $("#Main4").css("display","none");
+             $("#Main5").css("display","none");
+         })
+
+
      /*    document.getElementById("B8").addEventListener('click',function (){
              /!*console.log("value",document.getElementById("p3text7").value);*!/
 
